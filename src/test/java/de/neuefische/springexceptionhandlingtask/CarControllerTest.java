@@ -14,7 +14,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class AnimalControllerTest {
+class CarControllerTest {
 
     @Autowired
     MockMvc mockMvc;
@@ -23,16 +23,16 @@ class AnimalControllerTest {
     @DirtiesContext
     void getCarModelsTest() throws Exception {
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/animals/cat"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/cars/audi"))
                 .andExpect(status().isBadRequest())
-                .andExpect(content().string("Wrong animal. Only 'dog' is allowed"));
+                .andExpect(content().string("Wrong car model. Only 'porsche' is allowed"));
     }
 
     @Test
     @DirtiesContext
     void getAllCarsTest() throws Exception {
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/api/animals"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/api/cars"))
                 .andExpect(status().isNotFound())
                 .andExpect(content().json("""
                         {
