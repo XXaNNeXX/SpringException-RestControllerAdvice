@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ErrorMessage handleIllegalArgumentException() {
-        return new ErrorMessage("Wrong car model or animal. Only 'porsche' for cars or 'dog' for animals allowed!");
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ErrorMessage handleNoSuchElementException() {
+        return new ErrorMessage("No items available");
     }
 }
