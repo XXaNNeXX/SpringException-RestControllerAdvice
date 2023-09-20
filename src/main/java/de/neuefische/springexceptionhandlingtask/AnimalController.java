@@ -22,9 +22,9 @@ public class AnimalController {
         throw new NoSuchElementException("No Animals found");
     }
 
-    /*@ExceptionHandler(IllegalArgumentException.class)
+    @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String handleIllegalArgumentException() {
         return "Wrong animal. Only 'dog' is allowed";
-    }*/
+    }
 }

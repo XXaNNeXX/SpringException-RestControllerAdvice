@@ -22,9 +22,9 @@ public class CarController {
         throw new NoSuchElementException("No Cars found");
     }
 
-    /*@ExceptionHandler(IllegalArgumentException.class)
+    @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String handleIllegalArgumentException() {
         return "Wrong car model. Only 'porsche' is allowed";
-    }*/
+    }
 }
